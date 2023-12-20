@@ -1,22 +1,18 @@
-/* const API_BASE_URL = 'https://api.edamam.com';
-
-const getRecipeSearchResults = async (query, applicationId, applicationKey) => {
+const fetchProductData = async (searchQuery) => {
   try {
-    const response = await fetch(
-      `${API_BASE_URL}/search?q=${query}&app_id=${applicationId}&app_key=${applicationKey}`
-    );
-
+    const response = await fetch(`https://world.openfoodfacts.net/api/v2/product/${encodeURIComponent(searchQuery)}?fields=product_name,nutriscore_data,nutriments,nutrition_grades`);
+    
     if (!response.ok) {
-      throw new Error('Не удалось получить данные');
+      throw new Error('Failed to fetch');
     }
 
     const data = await response.json();
-    console.log(data);
-    return data;
+    return { productData: data.product, error: null };
   } catch (error) {
-    console.error('Ошибка:', error);
-    throw error;
+    console.error('Error fetching product:', error);
+    return { productData: null, error: 'Failed to fetch product data' };
   }
 };
 
-export { getRecipeSearchResults }; */
+export { fetchProductData }; 
+

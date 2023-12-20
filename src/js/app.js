@@ -44,15 +44,6 @@ class App extends React.Component {
 
                             <Route path="/" element={<Navigate to='/main_page' />}/>
                             <Route path="*" element={<Navigate to='/main_page' />}/>
-
-
-                            {/* <Route path='/results' element={<Main selectedPage={window.location.pathname}/>} />
-                            <Route path='/aboutUs' element={<Main selectedPage={window.location.pathname} />} />
-                            <Route path='/register' element={<RegisterForm />} />
-                            <Route path='/login' element={<LoginForm />} />
-                            <Route path='/profile' element={<Profile />}/>
-                            <Route path="/" element={<Navigate to='/main' />}/>
-                            <Route path="*" element={<Navigate to='/main' />}/> */}
                         </Routes>
                 </BrowserRouter>
         )    

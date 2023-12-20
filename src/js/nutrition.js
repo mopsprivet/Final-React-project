@@ -1,6 +1,8 @@
-import React from 'react'; 
-import '../css/nutrition.css'
+import React from 'react';
+import { fetchProductData } from '../api/api';
+import '../css/nutrition.css';
 
+//3017620422003, 0180411000803 barcodes for test 
 class Nutrition extends React.Component {
   constructor(props) {
     super(props);
@@ -11,20 +13,10 @@ class Nutrition extends React.Component {
     };
   }
 
-  //3017620422003, 0180411000803
   searchProduct = async () => {
-    try { 
-      const response = await fetch(`https://world.openfoodfacts.net/api/v2/product/${encodeURIComponent(this.state.searchQuery)}?fields=product_name,nutriscore_data,nutriments,nutrition_grades`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch');
-      }
-
-      const data = await response.json();
-      this.setState({ productData: data.product, error: null });
-    } catch (error) {
-      console.error('Error fetching product:', error);
-      this.setState({ productData: null, error: 'Failed to fetch product data' });
-    }
+    const { searchQuery } = this.state;
+    const { productData, error } = await fetchProductData(searchQuery);
+    this.setState({ productData, error });
   };
 
   handleInputChange = (event) => {
@@ -52,11 +44,10 @@ class Nutrition extends React.Component {
 
         {productData && (
           <div>
-            <p>Name: {productData.product_name}</p> 
+            <p>Name: {productData.product_name}</p>
             <p>Energy: {productData.nutriments.energy} {productData.nutriments.energy_unit}</p>
-            <p>Carbohydrates: {productData.nutriments.carbohydrates} {productData.nutriments.carbohydrates_unit}</p> 
+            <p>Carbohydrates: {productData.nutriments.carbohydrates} {productData.nutriments.carbohydrates_unit}</p>
             <p>Sugars: {productData.nutriments.sugars} {productData.nutriments.sugars_unit}</p>
-
           </div>
         )}
       </div>
@@ -64,4 +55,4 @@ class Nutrition extends React.Component {
   }
 }
 
-export default Nutrition;
+export default Nutrition; 

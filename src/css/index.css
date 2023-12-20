@@ -8,9 +8,7 @@ body, html {
     height: max-content;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    /* background-color: #EDEDE9;
-    color: #8A817C; */ 
+    flex-direction: column; 
     background-color: #def1e6; 
     color: #1B4332;
     justify-content: center;
