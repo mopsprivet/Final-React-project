@@ -1,0 +1,42 @@
+.profile {
+    width: 100%; 
+    height: 100%; 
+    margin: 20px; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+} 
+
+.personal-info, ul {
+    padding: 0;
+}
+
+.profile-block {
+    display: inline-block;  
+    align-self: center; 
+    justify-self: center;
+} 
+
+.name-username {
+    margin: 20px; 
+    padding: 10px;
+} 
+
+.name-username h1, h4{
+    margin: 5px;
+}
+
+.personal-info h3 { 
+    color: #1B4332;
+} 
+
+.personal-info li { 
+    font-size: 30px; 
+} 
+
+.connected-apps, .connected-devices {
+    margin: 30px; 
+    justify-content: center; 
+    align-items: center; 
+    
+}

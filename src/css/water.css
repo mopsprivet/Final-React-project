@@ -1,0 +1,73 @@
+.water-tracker body {
+    margin: 0;
+    padding: 0;
+} 
+
+.water-tracker {
+    text-align: center; 
+    margin: 50px; 
+    padding: 0; 
+}
+
+.water-tracker table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: auto;  
+    position: relative; 
+}
+
+.water-tracker th,
+.water-tracker td { 
+    border: 2px solid #b8d1bc8c; 
+    padding: 1px; 
+    margin: 1px;
+    text-align: center; 
+    height: 40px; 
+    border-radius: 7px; 
+}
+
+.water-tracker th {
+    background-color: #214e3a67; 
+} 
+
+.water-tracker td {
+    font-size: 19px; 
+}
+  
+.prev-month, .next-month {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 19px;
+    cursor: pointer;  
+    background-color: #0a281ecd; 
+    box-shadow: 0 .300rem .80rem rgba(0, 0, 0, 0.767); 
+    color: #def1e6;
+    border: none; 
+    border-radius: 7px; 
+} 
+
+.prev-month:hover, .next-month:hover { 
+    cursor: pointer; 
+    transform: scale(1.1); 
+    background-color: #2D6A4F; 
+    box-shadow: 0 .300rem .80rem rgba(0, 0, 0, 0.577); 
+    color: #eafdf2;  
+}
+  
+.water-tracker span {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+} 
+
+.water-tracker input[type="text"] { 
+    width: 30px;  
+    height: 30px; 
+    margin: 2px;
+    box-sizing: border-box; 
+    background-color: rgba(240, 250, 242, 0.811); 
+    border: 1px solid #b8d1bcee; 
+    border-radius: 4px;
+    font-size: 15px;
+}
